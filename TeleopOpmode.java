@@ -75,6 +75,7 @@ public class TeleopOpmode extends LinearOpMode {
         nav.initVuforia(this, robot);
 
         // Activate Vuforia (this takes a few seconds)
+        // STart tracking images
         nav.activateTracking();
 
         // Wait for the game to start (driver presses PLAY)
@@ -109,6 +110,7 @@ public class TeleopOpmode extends LinearOpMode {
             nav.addNavTelemetry();
 
             //  Move the robot according to the pre-determined axis motions
+            // cruiseControl + manualDrive create 3 motion requests (FB, LR, rotate) and saves them. moveRobot acts on those
             robot.moveRobot();
             telemetry.update();
         }
